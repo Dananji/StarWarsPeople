@@ -5,6 +5,10 @@ table {
   text-align: left;
 }
 
+.star-wars-heading {
+  font-size: 80px;
+}
+
 tr.example-detail-row {
   height: 0;
 }
