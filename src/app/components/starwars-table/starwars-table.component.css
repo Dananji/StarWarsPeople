@@ -1,0 +1,43 @@
+table {
+  width: 80%;
+  align: center;
+  background: #eeeeee;
+  text-align: left;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-character-row:not(.example-expanded-row):hover {
+  background: #f5f5f5;
+}
+
+tr.example-character-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-character-row td {
+  border-bottom-width: 0;
+}
+
+.example-character-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-character-expanded {
+  font-weight: normal;
+  padding: 5px;
+}
+
+.mat-table-headers {
+  font-weight: bold;
+  font-size: 20px;
+  font-family: star_jedi_outlineregular;
+}
+
+img {
+  width: 50%;
+  height: 10%;
+}

@@ -1,0 +1,41 @@
+<div>
+  <img src="../../assets/images/Star-Wars-Logo-PNG.png">
+  <h2>Explore your favorite characters...</h2>
+  <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8 table table-striped" align="center">
+
+    <!-- Create columns with *ngFor -->
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns">
+      <th class="mat-table-headers" mat-header-cell *matHeaderCellDef>{{column}}</th>
+      <td mat-cell *matCellDef="let character">{{character[column]}}</td>
+    </ng-container>
+
+    <!-- Create expandable column spanning across the table -->
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let character" [attr.colspan]="displayedColumns.length">
+        <div class="example-character-detail"
+             [@detailedExpand]="character == expandedCharacter ? 'expanded' : 'collapsed'">
+          <div class="example-character-expanded">
+            <div>Hair Color: {{character.hair_color}}</div>
+            <div>Birth Year: {{character.birth_year}}</div>
+            <div>Gender: {{character.gender}}</div>
+            <div>Home World: <a href="{{character.homeworld}}">{{character.homeworld}}</a></div>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let character; columns: displayedColumns;"
+        class="example-character-row"
+        [class.example-expanded-row]="expandedCharacter === character"
+        (click)="expandedCharacter = character">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  </table>
+
+  <mat-paginator #paginator
+                 [pageIndex]="0"
+                 [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 20]">
+  </mat-paginator>
+</div>
