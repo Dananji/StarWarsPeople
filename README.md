@@ -11,8 +11,6 @@ and run the commands again.
 
 3. Clone the project source code to your machine, and go to the project directory in the terminal and run `ng serve` command and navigate to `http://localhost:4200/` on your preferred browser.
 
-#### This project is deployed using GitHub Pages at, https://dananji.github.io/StarWarsPeople/
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
