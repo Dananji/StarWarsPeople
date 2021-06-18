@@ -5,7 +5,7 @@ import {StarwarsTableItem} from '../components/starwars-table/starwars-table-dat
 @Injectable()
 export class DataService {
   private results: [StarwarsTableItem];
-  private url = 'https://swapi.co/api/people';
+  private url = 'https://swapi.dev/api/people';
 
   constructor(private http: HttpClient) {
   }
